@@ -25,6 +25,6 @@ class Multimedia {
         string getPath() { return _pathname; }
 
         // Print
-        void print(ostream &s);
+        virtual void print(ostream &s);
 };
 #endif
