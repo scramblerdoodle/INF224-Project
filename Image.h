@@ -1,3 +1,5 @@
+#ifndef IMAGE_H
+#define IMAGE_H
 #include "Multimedia.h"
 
 class Image : public Multimedia {
@@ -25,3 +27,4 @@ class Image : public Multimedia {
         // Prints
         void print(ostream& s) override;
 };
+#endif

@@ -5,14 +5,16 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Image * im = new Image();
+    Image * image = new Image("customname", "custompath", 1920, 1080);
+    Image * imageDefault = new Image();
+    
     Multimedia * media = new Multimedia();
     cout << "Multimedia" << endl;
     media->print(cout);
     cout << endl;
 
-    cout << "Image" << endl;
-    im->print(cout);
+    image->print(cout);
+    imageDefault->print(cout);
 
 
     return 0;

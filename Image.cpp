@@ -9,7 +9,7 @@ Image::Image() : Multimedia() {
 };
 
 Image::Image(string name, string pathname, int size_x, int size_y) 
-    : Multimedia() {
+    : Multimedia(name, pathname) {
     setWidth(size_x);
     setHeight(size_y);
 };
