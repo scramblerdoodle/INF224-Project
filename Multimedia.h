@@ -5,16 +5,18 @@
 using namespace std;
 class Multimedia {
     private:
-        string m_name;
-        string m_pathname;
+        string _name;
+        string _pathname;
 
     public:
+        // Constructor
         Multimedia(string name, string pathname);
 
+        // Instance methods
         void setName(string name);
         void setPath(string pathname);
 
-        string getName() { return m_name; }
-        string getPath() { return m_pathname; }
+        string getName() { return _name; }
+        string getPath() { return _pathname; }
 };
 #endif
