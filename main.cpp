@@ -1,20 +1,20 @@
 #include <iostream>
-#include "Image.h"
+#include "Video.h"
 #include "Multimedia.h"
 using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Image * image = new Image("customname", "custompath", 1920, 1080);
-    Image * imageDefault = new Image();
+    Video * video = new Video("customname", "custompath", 600);
+    Video * videoDefault = new Video();
     
     Multimedia * media = new Multimedia();
     cout << "Multimedia" << endl;
     media->print(cout);
     cout << endl;
 
-    image->print(cout);
-    imageDefault->print(cout);
+    video->print(cout);
+    videoDefault->print(cout);
 
 
     return 0;
