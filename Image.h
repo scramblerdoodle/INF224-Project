@@ -14,7 +14,7 @@ class Image : public Multimedia {
         Image(string name, string pathname, int size_x, int size_y);
 
         // Destructor
-        ~Image();
+        ~Image() {};
 
         // Setters
         void setWidth(int size_y);

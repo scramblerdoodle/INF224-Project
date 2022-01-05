@@ -14,7 +14,7 @@ class Multimedia {
         Multimedia(string name, string pathname);
 
         // Destructor
-        ~Multimedia();
+        ~Multimedia() {};
 
         // Setters
         void setName(string name);
