@@ -9,7 +9,7 @@
 #
 # Nom du programme
 #
-PROG = myprog
+PROG = inf224-project
 
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
