@@ -5,8 +5,8 @@
 using namespace std;
 class Multimedia {
     private:
-        string name;
-        string pathname;
+        string m_name;
+        string m_pathname;
 
     public:
         Multimedia(string name, string pathname);
@@ -14,7 +14,7 @@ class Multimedia {
         void setName(string name);
         void setPath(string pathname);
 
-        string getName() { return name; }
-        string getPath() { return pathname; }
+        string getName() { return m_name; }
+        string getPath() { return m_pathname; }
 };
 #endif
