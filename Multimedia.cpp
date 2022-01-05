@@ -2,6 +2,12 @@
 
 using namespace std;
 
+// Default constructor
+Multimedia::Multimedia() {
+    setName("");
+    setPath("");
+};
+
 // Constructor
 Multimedia::Multimedia(string name, string pathname) {
     setName(name);

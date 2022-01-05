@@ -9,8 +9,12 @@ class Multimedia {
         string _pathname;
 
     public:
-        // Constructor
+        // Constructors
+        Multimedia();
         Multimedia(string name, string pathname);
+
+        // Destructor
+        ~Multimedia();
 
         // Instance methods
         void setName(string name);
