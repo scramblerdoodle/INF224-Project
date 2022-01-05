@@ -9,7 +9,10 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Multimedia media {"name", "path"};
-    std::cout << media.getPath() << ':' << media.getName() << std::endl;
+    Multimedia * media = new Multimedia("customname", "custompath");
+    Multimedia * media_default = new Multimedia();
+    media->print(cout);
+    media_default->print(cout);
+
     return 0;
 }

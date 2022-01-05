@@ -16,11 +16,15 @@ class Multimedia {
         // Destructor
         ~Multimedia();
 
-        // Instance methods
+        // Setters
         void setName(string name);
         void setPath(string pathname);
 
+        // Getters
         string getName() { return _name; }
         string getPath() { return _pathname; }
+
+        // Print
+        void print(ostream &s);
 };
 #endif
