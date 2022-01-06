@@ -15,7 +15,7 @@ class Film : public Video
         Film(string name, string pathname, int duration, int* chapters);
 
         // Destructor
-        ~Film() {};
+        ~Film() { delete[] chapterDurations; };
 
         // Setters
         void setChapters(int * chapters);
