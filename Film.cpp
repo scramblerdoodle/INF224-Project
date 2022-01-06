@@ -33,9 +33,8 @@ void Film::print(ostream &s)
     Video::print(s);
     s << "number of chapters: " << _numberChapters << endl;
 
-    auto chapters = getChapters();
     for (unsigned int i = 0; i < _numberChapters; i++)
-        s << "Chapter " << i + 1 << ": " << chapterDurations[i] << endl;
+        s << "Chapter " << i + 1 << "s : " << chapterDurations[i] << endl;
 
 }
 
