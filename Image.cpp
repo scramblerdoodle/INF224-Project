@@ -30,7 +30,7 @@ void Image::print(ostream &s) {
 }
 
 // Methods
-void Image::open() {
+void Image::play() {
     string vlc = "mimeopen "; // POSSIBLY CHANGE TO SOMETHING ELSE
     string pathname = "'" + getPath() + "'"; // possibly might need to change these '
     string ampersand = " &";

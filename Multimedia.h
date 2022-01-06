@@ -26,5 +26,8 @@ class Multimedia {
 
         // Print
         virtual void print(ostream &s);
+
+        // Methods
+        virtual void play() {};
 };
 #endif

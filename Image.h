@@ -28,6 +28,6 @@ class Image : public Multimedia {
         void print(ostream& s) override;
 
         // Methods
-        void open();
+        void play() override;
 };
 #endif
