@@ -28,3 +28,12 @@ void Image::print(ostream &s) {
     Multimedia::print(s);
     s << this->getWidth() << "x" << this->getHeight() << endl;
 }
+
+// Methods
+void Image::open() {
+    string vlc = "mimeopen "; // POSSIBLY CHANGE TO SOMETHING ELSE
+    string pathname = "'" + getPath() + "'"; // possibly might need to change these '
+    string ampersand = " &";
+    string finalCommand = vlc + pathname + ampersand;
+    system(finalCommand.c_str());
+}
