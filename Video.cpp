@@ -3,28 +3,33 @@
 using namespace std;
 
 // Constructors
-Video::Video() : Multimedia() {
+Video::Video() : Multimedia() 
+{
     setDuration(0);
 };
 
 Video::Video(string name, string pathname, int duration) 
-    : Multimedia(name, pathname) {
+    : Multimedia(name, pathname) 
+{
     setDuration(duration);
 };
 
 // Setters
-void Video::setDuration(int duration) {
+void Video::setDuration(int duration) 
+{
     _duration = duration;
 };
 
 // Prints
-void Video::print(ostream &s) {
+void Video::print(ostream &s) 
+{
     Multimedia::print(s);
-    s << this->getDuration() << "s" << endl;
+    s << "Total duration: " << getDuration() << "s" << endl;
 }
 
 // Methods
-void Video::play() {
+void Video::play() 
+{
     string vlc = "vlc "; // CHANGE TO MPV
     string pathname = "'" + getPath() + "'"; // possibly might need to change these '
     string ampersand = " &";

@@ -4,27 +4,32 @@
 using namespace std;
 
 // Default constructor
-Multimedia::Multimedia() {
+Multimedia::Multimedia() 
+{
     setName("name");
     setPath("path");
 };
 
 // Constructor
-Multimedia::Multimedia(string name, string pathname) {
+Multimedia::Multimedia(string name, string pathname) 
+{
     setName(name);
     setPath(pathname);
 };
 
 // Setters
-void Multimedia::setName(string name) {
+void Multimedia::setName(string name) 
+{
     _name = name;    
 };
 
-void Multimedia::setPath(string pathname) {
+void Multimedia::setPath(string pathname) 
+{
     _pathname = pathname;
 }
 
 // Print
-void Multimedia::print(ostream &s) {
-    s << this->getName() << " : " << this->getPath() << endl;
+void Multimedia::print(ostream &s) 
+{
+    s << "Name and Path: " <<  this->getName() << " @ " << this->getPath() << endl;
 }
