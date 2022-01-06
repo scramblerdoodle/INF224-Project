@@ -2,7 +2,8 @@
 #define IMAGE_H
 #include "Multimedia.h"
 
-class Image : public Multimedia {
+class Image : public Multimedia 
+{
     private:
         int _size_x;
         int _size_y;

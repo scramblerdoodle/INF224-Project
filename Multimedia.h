@@ -3,7 +3,8 @@
 #include <string>
 
 using namespace std;
-class Multimedia {
+class Multimedia 
+{
     private:
         string _name;
         string _pathname;

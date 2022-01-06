@@ -2,7 +2,8 @@
 #define VIDEO_H
 #include "Multimedia.h"
 
-class Video : public Multimedia {
+class Video : public Multimedia 
+{
     private:
         int _duration;
     
@@ -25,6 +26,6 @@ class Video : public Multimedia {
         void print(ostream& s) override;
 
         // Methods
-        void play() override;
+        virtual void play() override;
 };
 #endif
