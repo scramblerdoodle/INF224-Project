@@ -34,7 +34,7 @@ void Film::print(ostream &s)
     s << "number of chapters: " << _numberChapters << endl;
 
     for (unsigned int i = 0; i < _numberChapters; i++)
-        s << "Chapter " << i + 1 << "s : " << chapterDurations[i] << endl;
+        s << "Chapter " << i + 1 << ": " << chapterDurations[i] << "s" << endl;
 
 }
 
