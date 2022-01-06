@@ -22,3 +22,12 @@ void Video::print(ostream &s) {
     Multimedia::print(s);
     s << this->getDuration() << "s" << endl;
 }
+
+// Methods
+void Video::play() {
+    string vlc = "vlc "; // CHANGE TO MPV
+    string pathname = "'" + getPath() + "'"; // possibly might need to change these '
+    string ampersand = " &";
+    string finalCommand = vlc + pathname + ampersand;
+    system(finalCommand.c_str());
+}

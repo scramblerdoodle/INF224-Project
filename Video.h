@@ -23,5 +23,8 @@ class Video : public Multimedia {
         
         // Prints
         void print(ostream& s) override;
+
+        // Methods
+        void play();
 };
 #endif
