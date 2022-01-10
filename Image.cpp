@@ -31,7 +31,7 @@ void Image::setHeight(int size_y)
 void Image::print(ostream &s) 
 {
     Multimedia::print(s);
-    s << "Size: " << getWidth() << "x" << getHeight() << endl;
+    s << "Size: " << getWidth() << "x" << getHeight() << "  ";
 }
 
 // Methods

@@ -24,7 +24,7 @@ void Video::setDuration(int duration)
 void Video::print(ostream &s) 
 {
     Multimedia::print(s);
-    s << "Total duration: " << getDuration() << "s" << endl;
+    s << "Total duration: " << getDuration() << "s" << "  ";
 }
 
 // Methods

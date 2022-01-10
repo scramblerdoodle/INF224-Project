@@ -31,5 +31,5 @@ void Multimedia::setPath(string pathname)
 // Print
 void Multimedia::print(ostream &s) 
 {
-    s << "Name and Path: " <<  this->getName() << " @ " << this->getPath() << endl;
+    s << "Name and Path: " <<  this->getName() << " @ " << this->getPath() << "  ";
 }

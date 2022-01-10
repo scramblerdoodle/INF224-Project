@@ -31,10 +31,10 @@ void Film::setChapters(int* chapters)
 void Film::print(ostream &s) 
 {
     Video::print(s);
-    s << "number of chapters: " << _numberChapters << endl;
+    s << "number of chapters: " << _numberChapters << "  ";
 
     for (unsigned int i = 0; i < _numberChapters; i++)
-        s << "Chapter " << i + 1 << ": " << chapterDurations[i] << "s" << endl;
+        s << "Chapter " << i + 1 << ": " << chapterDurations[i] << "s" << "  ";
 
 }
 
