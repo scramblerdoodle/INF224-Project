@@ -38,5 +38,9 @@ int main(int argc, const char* argv[])
         }
     } while (name != "q");
 
+    objects.remove("jolly");
+    objects.remove("skeleton");
+    objects.remove("group");
+
     return 0;
 }

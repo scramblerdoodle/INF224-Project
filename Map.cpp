@@ -5,36 +5,36 @@
 #include <iostream>
 
 using namespace std;
+// "DESTRUCTOR"
+void Map::remove(string name)
+{
+    if (_medias.find(name) != _medias.end()) _medias.erase(name);
+    else if (_groups.find(name) != _groups.end()) _groups.erase(name);
+    else { cout << "Keyword not found." << endl; }
+};
 
 // SETTERS
 MediaPtr Map::addImage(string name, string pathname, int size_x, int size_y)
 {
-    // what to do if name matches but is of different type? maybe it's not supposed to be allowed either so it's ok
     if (_medias.find(name) == _medias.end())
-    {
         _medias[name] = ImagePtr(new Image(name, pathname, size_x, size_y));
-    }
-    else { cout << "ERROR: This keyname was already used."; }
+    else { cout << "ERROR: This keyword was already used." << endl; }
     return _medias[name];
 };
 
 MediaPtr Map::addVideo(string name, string pathname, int duration)
 {
     if (_medias.find(name) == _medias.end())
-    {
         _medias[name] = VideoPtr(new Video(name, pathname, duration));
-    }
-    else { cout << "ERROR: This keyname was already used."; }
+    else { cout << "ERROR: This keyword was already used." << endl; }
     return _medias[name];
 };
 
 MediaPtr Map::addFilm(string name, string pathname, int duration, int* chapters)
 {
     if (_medias.find(name) == _medias.end())
-    {
         _medias[name] = FilmPtr(new Film(name, pathname, duration, chapters));
-    }
-    else { cout << "ERROR: This keyname was already used."; }
+    else { cout << "ERROR: This keyword was already used." << endl; }
     return _medias[name];
 };
 
@@ -44,7 +44,7 @@ GroupPtr Map::addGroup(string name)
     {
         _groups[name] = GroupPtr(new Group(name));
     }
-    else { cout << "ERROR: This keyname was already used."; }
+    else { cout << "ERROR: This keyword was already used." << endl; }
     return _groups[name];
 };
 

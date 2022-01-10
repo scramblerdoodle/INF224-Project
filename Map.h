@@ -20,6 +20,9 @@ class Map
         // Constructor
         Map() : _medias(), _groups() {};
 
+        // "Destructor"
+        void remove(string name);
+
         // Setters
         MediaPtr addImage(string name, string pathname, int size_x, int size_y);
         MediaPtr addVideo(string name, string pathname, int duration);
