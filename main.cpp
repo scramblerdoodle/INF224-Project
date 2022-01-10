@@ -18,22 +18,8 @@ int main(int argc, const char* argv[])
 
 
     GroupPtr gr = objects.getGroup("group");
-    gr->push_back(
-        FilmPtr (
-            new Film(
-                "skeleton", "/media/orlando/Files/Videos/webm/attack helicopter invades peaceful skeleton realm.mp4", 
-                23, chaptersSkeleton
-            )
-        )
-    );
-    gr->push_back(
-        ImagePtr(
-            new Image(
-                "jolly", "/media/orlando/Files/Pictures/157899859_284324719767687_2825453359009430038_n.jpg", 
-                500, 500
-            )
-        )
-    );
+    gr->push_back(objects.getMedia("skeleton"));
+    gr->push_back(objects.getMedia("jolly"));
 
     delete [] chaptersSkeleton;
 
