@@ -9,7 +9,7 @@
 #
 # Nom du programme
 #
-PROG=inf224
+PROG=local
 CLIENT=client
 SERVER=server
 CLISERV=cliserv
@@ -62,10 +62,10 @@ LDLIBS= -lpthread
 
 all: ${PROG} ${CLIENT} ${SERVER}
 
-run: ${PROG}
+run-${PROG}: ${PROG}
 	./${PROG}
 
-run-${SERVER}: ${SERVER}
+run: ${SERVER}
 	./${SERVER}
 
 run-${CLIENT}: ${CLIENT}
