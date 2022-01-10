@@ -30,4 +30,5 @@ class Film : public Video
         // Methods
         void play(int chapter);
 };
+typedef shared_ptr<Film> FilmPtr;
 #endif
