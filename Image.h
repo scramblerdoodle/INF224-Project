@@ -31,4 +31,5 @@ class Image : public Multimedia
         // Methods
         void play() override;
 };
+typedef shared_ptr<Image> ImagePtr;
 #endif

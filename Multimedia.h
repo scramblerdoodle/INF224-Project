@@ -1,6 +1,7 @@
 #ifndef MULTIMEDIA_H
 #define MULTIMEDIA_H
 #include <string>
+#include <memory>
 
 using namespace std;
 class Multimedia 
@@ -31,4 +32,5 @@ class Multimedia
         // Methods
         virtual void play() {};
 };
+typedef shared_ptr<Multimedia> MediaPtr;
 #endif

@@ -28,4 +28,5 @@ class Video : public Multimedia
         // Methods
         virtual void play() override;
 };
+typedef shared_ptr<Video> VideoPtr;
 #endif

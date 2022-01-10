@@ -3,24 +3,25 @@
 #include "Image.h"
 #include "Video.h"
 #include "Film.h"
+#include "Group.h"
 using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    Multimedia ** mediaArray = new Multimedia * [2];
+    shared_ptr<Group> group(new Group("Group test"));
     
-    unsigned int count = 0;
-
-    int* chaptersSkeleton = new int[2]{0, 12};
-    mediaArray[count++] = new Film("skeleton", "/media/orlando/Files/Videos/webm/attack helicopter invades peaceful skeleton realm.mp4", 23, chaptersSkeleton);
+    int* chaptersSkeleton(new int[2]{0, 12});
+    shared_ptr<Film> film(new Film("skeleton", "/media/orlando/Files/Videos/webm/attack helicopter invades peaceful skeleton realm.mp4", 23, chaptersSkeleton));
     delete [] chaptersSkeleton;
 
-    mediaArray[count++] = new Image("jolly", "/media/orlando/Files/Pictures/157899859_284324719767687_2825453359009430038_n.jpg", 500, 500);
+    shared_ptr<Image> image(new Image("jolly", "/media/orlando/Files/Pictures/157899859_284324719767687_2825453359009430038_n.jpg", 500, 500));
 
-    for (unsigned int i = 0; i < count; i++)
+    group->push_back(film);
+    group->push_back(image);
+    for (auto& it : *group)
     {
-        mediaArray[i]->print(cout);
-        // mediaArray[i]->play();
+        it->print(cout);
+        // group[i]->play();
         cout << endl;
     }
 
