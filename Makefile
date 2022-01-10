@@ -14,7 +14,7 @@ PROG = inf224-project
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
 #
-SOURCES = Multimedia.cpp Image.cpp Video.cpp Film.cpp Group.cpp main.cpp
+SOURCES = Multimedia.cpp Image.cpp Video.cpp Film.cpp Group.cpp Map.cpp main.cpp
 
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)
