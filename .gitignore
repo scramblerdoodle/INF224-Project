@@ -1,5 +1,6 @@
 *
 !*.*
-tcpserver*
+tcpserver/*
+*.zip
 *.o
 depend-*
