@@ -3,12 +3,27 @@
 #include <iostream>
 #include <sstream>
 #include "tcpserver.h"
+#include "Map.h"
 
 const int PORT = 3331;
 
 
 int main(int argc, char* argv[])
 {
+    // Creates the mapping object and populates it with test data
+    Map objects;
+    int* chaptersSkeleton(new int[2]{0, 12});
+    objects.addFilm("skeleton", "/media/orlando/Files/Videos/webm/attack helicopter invades peaceful skeleton realm.mp4", 23, chaptersSkeleton);
+    objects.addImage("jolly", "/media/orlando/Files/Pictures/157899859_284324719767687_2825453359009430038_n.jpg", 500, 500);
+    objects.addGroup("group");
+
+    GroupPtr gr = objects.getGroup("group");
+    gr->push_back(objects.getMedia("skeleton"));
+    gr->push_back(objects.getMedia("jolly"));
+
+    delete [] chaptersSkeleton;
+
+
     // cree le TCPServer
     auto* server =
     new TCPServer( [&](std::string const& request, std::string& response) {
@@ -16,8 +31,12 @@ int main(int argc, char* argv[])
         // the request sent by the client to the server
         std::cout << "request: " << request << std::endl;
 
+        stringstream s;
+        objects.print(request, s);
+        objects.play(request);
+
         // the response that the server sends back to the client
-        response = "RECEIVED: " + request;
+        response = "RECEIVED: " + s.str();
 
         // return false would close the connection with the client
         return true;
