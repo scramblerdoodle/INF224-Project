@@ -12,6 +12,8 @@ int main(int argc, char* argv[])
 {
     // Creates the mapping object and populates it with test data
     Map objects;
+
+    // TODO: save these into a file or something which is stored in the server, making it simpler to edit/keep permanent non-hardcoded entries
     int* chaptersSkeleton(new int[2]{0, 12});
     objects.addFilm("skeleton", "/media/orlando/Files/Videos/webm/attack helicopter invades peaceful skeleton realm.mp4", 23, chaptersSkeleton);
     objects.addImage("jolly", "/media/orlando/Files/Pictures/157899859_284324719767687_2825453359009430038_n.jpg", 500, 500);
@@ -31,6 +33,7 @@ int main(int argc, char* argv[])
         // the request sent by the client to the server
         std::cout << "request: " << request << std::endl;
 
+        // TODO: add new commands (print, play, list, search, add, remove, edit, etc)
         stringstream s;
         objects.print(request, s);
         objects.play(request);
