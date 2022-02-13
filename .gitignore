@@ -1,6 +1,6 @@
-*
-!*.*
-tcpserver/*
+cpp/*
+!cpp/*.*
+cpp/tcpserver/*
 *.zip
 *.o
 depend-*
