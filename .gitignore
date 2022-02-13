@@ -1,5 +1,12 @@
+# Ignore everything
 *
+
+# Except files with an extension, or the makefile
 !*.*
+!*/
+!Makefile
+
+# Also everything in tcpserver, .zip, .o and depend-
 cpp/tcpserver/*
 *.zip
 *.o
