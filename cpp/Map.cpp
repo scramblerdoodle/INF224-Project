@@ -149,7 +149,7 @@ GroupPtr Map::addGroup(string name)
 };
 
 // GETTERS
-MediaPtr Map::getMedia(string name)
+MediaPtr const Map::getMedia(string name)
 {
     auto media = _medias.find(name);
     if (media != _medias.end())
@@ -158,7 +158,7 @@ MediaPtr Map::getMedia(string name)
         return nullptr;
 };
 
-GroupPtr Map::getGroup(string name)
+GroupPtr const Map::getGroup(string name)
 {
     auto group = _groups.find(name);
     if (group != _groups.end())
@@ -175,6 +175,7 @@ void Map::print(string name, ostream& s)
     if (media != nullptr) media->print(s);
     else if (group != nullptr) group->print(s);
     else { s << "Keyword not found."; }
+    s << endl;
 };
 
 void Map::play(string name)

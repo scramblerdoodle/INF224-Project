@@ -32,8 +32,10 @@ class Map
         GroupPtr addGroup(string name);
 
         // Getters
-        MediaPtr getMedia(string name);
-        GroupPtr getGroup(string name);
+        mediaDict const getAllMedias() { return _medias; };
+        groupDict const getAllGroups() { return _groups; };
+        MediaPtr const getMedia(string name);
+        GroupPtr const getGroup(string name);
 
         // Methods
         void print(string name, ostream& s);
