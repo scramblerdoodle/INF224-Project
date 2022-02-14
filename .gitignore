@@ -6,8 +6,9 @@
 !*/
 !Makefile
 
-# Also everything in tcpserver, .zip, .o and depend-
+# Also everything in tcpserver, .zip, .o, depend-, and VSCode-related
 cpp/tcpserver/*
 *.zip
 *.o
 depend-*
+settings.json
