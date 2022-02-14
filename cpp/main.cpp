@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <map>
 
 #include "Image.h"
 #include "Video.h"
@@ -9,20 +11,8 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {    
-    int* chaptersSkeleton(new int[2]{0, 12});
 
-    Map objects;
-    objects.addFilm("skeleton", "/media/orlando/Files/Videos/webm/attack helicopter invades peaceful skeleton realm.mp4", 23, chaptersSkeleton);
-    objects.addImage("jolly", "/media/orlando/Files/Pictures/157899859_284324719767687_2825453359009430038_n.jpg", 500, 500);
-    objects.addGroup("group");
-
-
-    GroupPtr gr = objects.getGroup("group");
-    gr->push_back(objects.getMedia("skeleton"));
-    gr->push_back(objects.getMedia("jolly"));
-
-    delete [] chaptersSkeleton;
-
+    Map objects("../media.txt");
     cout << endl << "Press q to quit." << endl;
     string name;
     do
@@ -36,9 +26,6 @@ int main(int argc, const char* argv[])
         }
     } while (name != "q");
 
-    objects.remove("jolly");
-    objects.remove("skeleton");
-    objects.remove("group");
 
     return 0;
 }

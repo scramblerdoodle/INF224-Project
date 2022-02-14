@@ -9,22 +9,18 @@ Film::Film() : Video()
     setChapters({});
 };
 
-Film::Film(string name, string pathname, int duration, int* chapters) 
+Film::Film(string name, string pathname, int duration, vector<int> chapters) 
     : Video(name, pathname, duration) 
 {
-    _numberChapters = sizeof &chapters/sizeof chapters[0];
+    _numberChapters = chapters.size();
     setChapters(chapters);
 };
 
 // Setters
-void Film::setChapters(int* chapters) 
+void Film::setChapters(vector<int> chapters) 
 {
-    chapterDurations = new int(_numberChapters);
-
-    for (unsigned int i = 0; i < _numberChapters; i++)
-    {
-        chapterDurations[i] = chapters[i];
-    }
+    for (auto i : chapters)
+        chapterDurations.push_back(i);
 };
 
 // Prints
@@ -33,8 +29,9 @@ void Film::print(ostream &s)
     Video::print(s);
     s << "number of chapters: " << _numberChapters << "  ";
 
-    for (unsigned int i = 0; i < _numberChapters; i++)
-        s << "Chapter " << i + 1 << ": " << chapterDurations[i] << "s" << "  ";
+    int i = 0;
+    for (auto c : chapterDurations)
+        s << "Chapter " << ++i << ": " << c << "s" << "  ";
 
 }
 

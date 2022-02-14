@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include <map>
+#include <vector>
 #include "Multimedia.h"
 #include "Group.h"
 
@@ -18,6 +19,7 @@ class Map
 
     public:
         // Constructor
+        Map(string filepath);
         Map() : _medias(), _groups() {};
 
         // "Destructor"
@@ -26,7 +28,7 @@ class Map
         // Setters
         MediaPtr addImage(string name, string pathname, int size_x, int size_y);
         MediaPtr addVideo(string name, string pathname, int duration);
-        MediaPtr addFilm(string name, string pathname, int duration, int* chapters);
+        MediaPtr addFilm(string name, string pathname, int duration, vector<int> chapters);
         GroupPtr addGroup(string name);
 
         // Getters

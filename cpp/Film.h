@@ -1,27 +1,28 @@
 #ifndef FILM_H
 #define FILM_H
 #include "Video.h"
+#include <vector>
 
 class Film : public Video 
 {
     private:
-        int * chapterDurations;
+        vector<int> chapterDurations{};
         unsigned int _numberChapters;
     
     public:
 
         // Constructors
         Film();
-        Film(string name, string pathname, int duration, int* chapters);
+        Film(string name, string pathname, int duration, vector<int> chapters);
 
         // Destructor
-        ~Film() { delete[] chapterDurations; };
+        ~Film() {};
 
         // Setters
-        void setChapters(int * chapters);
+        void setChapters(vector<int> chapters);
 
         // Getters
-        int* getChapters() { return chapterDurations; };
+        vector<int> const getChapters() { return chapterDurations; };
         int getChapterCount() { return _numberChapters; };
         
         // Prints
