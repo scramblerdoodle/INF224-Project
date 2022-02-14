@@ -44,7 +44,7 @@ void convertStrtoVect(string str, vector<int>* arr)
             arr->push_back(0);
         }
         else {  
-            // subtract c by '0'' to convert it to int
+            // subtract c by '0' to convert it to int
             // Generate number by multiplying 10 and adding
             // (int)(c)
             arr->at(j) = arr->at(j) * 10 + (c - '0');
@@ -92,10 +92,10 @@ Map::Map(string filepath) : _medias(), _groups()
                 break;
 
             case evGroup:
-                addGroup("group");
-                gr = getGroup("group");
+                addGroup(wordArray[0]);
+                gr = getGroup(wordArray[0]);
+                wordArray.erase(wordArray.begin());
                 for (auto title : wordArray)    gr->push_back(getMedia(title));
-                
                 break;
 
             default:
