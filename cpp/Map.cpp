@@ -175,7 +175,6 @@ void Map::print(string name, ostream& s)
     if (media != nullptr) media->print(s);
     else if (group != nullptr) group->print(s);
     else { s << "Keyword not found."; }
-    s << endl;
 };
 
 void Map::play(string name)
