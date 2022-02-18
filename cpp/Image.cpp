@@ -37,7 +37,7 @@ void Image::print(ostream &s)
 // Methods
 void Image::play() 
 {
-    string cmd = "eog "; // POSSIBLY CHANGE TO SOMETHING ELSE
+    string cmd = "eog "; // TODO: change to mpv
     string pathname = getPath();
     string finalCommand = cmd + pathname + " &";
     system(finalCommand.c_str());

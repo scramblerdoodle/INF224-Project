@@ -30,9 +30,8 @@ void Video::print(ostream &s)
 // Methods
 void Video::play() 
 {
-    string vlc = "vlc "; // CHANGE TO MPV
-    string pathname = "'" + getPath() + "'"; // possibly might need to change these '
-    string ampersand = " &";
-    string finalCommand = vlc + pathname + ampersand;
+    string cmd = "vlc "; // TODO: change to mpv
+    string pathname = getPath();
+    string finalCommand = cmd + pathname + " &";
     system(finalCommand.c_str());
 }
