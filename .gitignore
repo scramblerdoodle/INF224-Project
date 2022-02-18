@@ -12,3 +12,4 @@ cpp/tcpserver/*
 *.o
 depend-*
 settings.json
+*.class
