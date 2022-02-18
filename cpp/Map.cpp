@@ -174,11 +174,12 @@ void Map::print(string name, ostream& s)
     auto group = getGroup(name);
     if (media != nullptr) media->print(s);
     else if (group != nullptr) group->print(s);
-    else { s << "Keyword not found."; }
+    else { s << "Keyword " << name << " not found."; }
 };
 
-void Map::play(string name)
+void Map::play(string name, ostream& s)
 {
     auto media = getMedia(name);
     if (media != nullptr) media->play();
+    else { s << "Keyword " << name << " not found."; }
 }

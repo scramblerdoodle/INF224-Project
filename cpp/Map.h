@@ -39,7 +39,7 @@ class Map
 
         // Methods
         void print(string name, ostream& s);
-        void play(string name);
+        void play(string name, ostream& s);
 
 };
 #endif

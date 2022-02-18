@@ -96,7 +96,6 @@ void processRequest(string request, Map objects, ostream& output)
     switch (s_mapOptionValues[opts[0]])
     {
     case evHelp:
-        output << ";";
         output << "help: list commands" << ";";
         output << "list: show all media options" << ";";
         output << "print <option>: show info related to a chosen media file" << ";";
@@ -110,7 +109,7 @@ void processRequest(string request, Map objects, ostream& output)
         break;
 
     case evList:
-        output << ";" << "Medias:" << ";";
+        output << "Medias:" << ";";
         for (auto it : objects.getAllMedias())
             output << "\t" << it.first << ";";
         
@@ -126,8 +125,8 @@ void processRequest(string request, Map objects, ostream& output)
         break;
 
     case evPlay:
-        output << "Playing " << opts[1];
-        objects.play(opts[1]);
+        output << "Playing " << opts[1] << ";";
+        objects.play(opts[1], output);
         break;
 
     case evSearch:

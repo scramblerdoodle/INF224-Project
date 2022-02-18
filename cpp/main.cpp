@@ -40,6 +40,15 @@ static void Initialize()
 
 static void processRequest(string request, Map objects, ostream& output);
 
+std::string ReplaceAll(std::string str, const std::string& from, const std::string& to) {
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos) {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length(); // Handles case where 'to' is a substring of 'from'
+    }
+    return str;
+}
+
 
 int main(int argc, const char* argv[])
 {    
@@ -60,7 +69,7 @@ int main(int argc, const char* argv[])
 
         if (output.str() == "quit") break;
         
-        std::cout << output.str();
+        std::cout << ReplaceAll(output.str(), ";", "\n");
     }
 
     return 0;
@@ -81,7 +90,7 @@ void processRequest(string request, Map objects, ostream& output)
     {
     case evHelp:
         output << "help: list commands" << endl;
-        output << "nlist: show all media options" << endl;
+        output << "list: show all media options" << endl;
         output << "print <option>: show info related to a chosen media file" << endl;
         output << "play <option>: play a media file" << endl;
         output << "search <pattern>: look for media starting with chosen pattern" << endl;
@@ -105,10 +114,12 @@ void processRequest(string request, Map objects, ostream& output)
 
     case evPrint:
         objects.print(opts[1], output);
+        output << ";";
         break;
 
     case evPlay:
-        objects.play(opts[1]);
+        objects.play(opts[1], output);
+        output << ";";
         break;
 
     case evSearch:
