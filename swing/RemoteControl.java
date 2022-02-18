@@ -27,7 +27,7 @@ public class RemoteControl extends JPanel implements ActionListener
 		// Buttons
 	    JPanel buttons = new JPanel();
 		b1 = new JButton("Show available medias");
-		b2 = new JButton("Print");
+		b2 = new JButton("Show details");
 		b3 = new JButton("Play");
 	    b1.addActionListener(this); b2.addActionListener(this); b3.addActionListener(this);
 		buttons.add(b1); buttons.add(b2); buttons.add(b3);
@@ -44,6 +44,7 @@ public class RemoteControl extends JPanel implements ActionListener
 
 		// Response field
 	    responseField = new JTextArea(50,60);
+		responseField.setLineWrap(true);
 	    panel.add(responseField, BorderLayout.SOUTH);
 
 
