@@ -10,9 +10,9 @@ public class RemoteControl extends JPanel implements ActionListener
 	static final int DEFAULT_PORT = 3331;
 
 	private JButton b1, b2, b3;
-	private JLabel l;	
+	private JLabel requestLabel;	
 	private JTextArea responseField;
-	private JTextField reqField;
+	private JTextField requestField;
 	
 	private Client client;
 	
@@ -22,7 +22,7 @@ public class RemoteControl extends JPanel implements ActionListener
 		JFrame f = new JFrame();
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-		Container panel = f.getContentPane();
+		Container container = f.getContentPane();
 
 		// Buttons
 	    JPanel buttons = new JPanel();
@@ -31,21 +31,21 @@ public class RemoteControl extends JPanel implements ActionListener
 		b3 = new JButton("Play");
 	    b1.addActionListener(this); b2.addActionListener(this); b3.addActionListener(this);
 		buttons.add(b1); buttons.add(b2); buttons.add(b3);
-		panel.add(buttons,BorderLayout.NORTH);		
+		container.add(buttons,BorderLayout.NORTH);		
 
 		// Request field
 		JPanel mainPanel = new JPanel();
-		l = new JLabel("choose a media file or a group:");
-		l.setHorizontalAlignment(JLabel.LEFT);
-		reqField = new JTextField(50);
-		l.setHorizontalAlignment(JTextField.LEFT);
-		mainPanel.add(l); mainPanel.add(reqField);
-		panel.add(mainPanel, BorderLayout.CENTER);
+		requestLabel = new JLabel("choose a media file or a group:");
+		requestLabel.setHorizontalAlignment(JLabel.LEFT);
+		requestField = new JTextField(50);
+		requestLabel.setHorizontalAlignment(JTextField.LEFT);
+		mainPanel.add(requestLabel); mainPanel.add(requestField);
+		container.add(mainPanel, BorderLayout.CENTER);
 
 		// Response field
 	    responseField = new JTextArea(50,60);
 		responseField.setLineWrap(true);
-	    panel.add(responseField, BorderLayout.SOUTH);
+	    container.add(responseField, BorderLayout.SOUTH);
 
 
 		f.pack();
@@ -63,12 +63,12 @@ public class RemoteControl extends JPanel implements ActionListener
 			}
 			else if (e.getSource() == b2)
 			{
-				String response = client.send("print " + reqField.getText());
+				String response = client.send("print " + requestField.getText());
 				responseField.setText(response.replace(";", "\n"));
 			}
 			else if (e.getSource() == b3)
 			{
-				String response = client.send("play " + reqField.getText());
+				String response = client.send("play " + requestField.getText());
 				responseField.setText(response.replace(";", "\n"));
 			}
 		}catch(Exception ex){System.out.println(ex);}
