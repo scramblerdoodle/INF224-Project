@@ -180,6 +180,8 @@ void Map::print(string name, ostream& s)
 void Map::play(string name, ostream& s)
 {
     auto media = getMedia(name);
+    auto group = getGroup(name);
     if (media != nullptr) media->play();
+    else if (group != nullptr) group->play();
     else { s << "Keyword " << name << " not found."; }
 }

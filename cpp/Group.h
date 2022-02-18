@@ -23,6 +23,7 @@ class Group : public list<MediaPtr>
         string getName() { return _name; };
 
         void print(ostream& s);
+        void play();
 };
 typedef shared_ptr<Group> GroupPtr;
 #endif

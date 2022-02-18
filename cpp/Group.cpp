@@ -7,6 +7,11 @@ void Group::print(ostream& s){
     {
         (*it)->print(s);
         s << ";";
-    }
-    
+    }    
 };
+
+void Group::play()
+{
+    for (iterator it = begin(); it != end(); it++)
+        (*it)->play();
+}
