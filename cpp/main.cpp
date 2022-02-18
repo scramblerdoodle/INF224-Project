@@ -48,9 +48,6 @@ int main(int argc, const char* argv[])
     string request;
     stringstream output;
 
-    mediaDict medias;
-    groupDict groups;
-    
     Initialize();
     std::cout << endl << "Type 'help' to list all available commands." << endl;
     
@@ -61,12 +58,9 @@ int main(int argc, const char* argv[])
         getline(cin, request);
         processRequest(request, objects, output);
 
+        if (output.str() == "quit") break;
+        
         std::cout << output.str();
-        if (output.str() == "quit") 
-        {
-            std::cout << '\n';
-            break;
-        }
     }
 
     return 0;
