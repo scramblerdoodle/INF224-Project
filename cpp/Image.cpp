@@ -37,9 +37,8 @@ void Image::print(ostream &s)
 // Methods
 void Image::play() 
 {
-    string vlc = "mimeopen "; // POSSIBLY CHANGE TO SOMETHING ELSE
-    string pathname = "'" + getPath() + "'"; // possibly might need to change these '
-    string ampersand = " &";
-    string finalCommand = vlc + pathname + ampersand;
+    string cmd = "eog "; // POSSIBLY CHANGE TO SOMETHING ELSE
+    string pathname = getPath();
+    string finalCommand = cmd + pathname + " &";
     system(finalCommand.c_str());
 }
