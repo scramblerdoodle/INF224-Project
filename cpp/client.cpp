@@ -36,8 +36,8 @@ int main() {
         return 1;
     }
   }
-
   std::cout << "Client connected to " << HOST << ":" << PORT << std::endl;
+  std::cout << "Type help to list all available commands." << std::endl;
 
   while (std::cin) {
     std::cout << "Request: ";
