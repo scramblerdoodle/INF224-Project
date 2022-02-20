@@ -35,7 +35,7 @@ static void Initialize()
     s_mapOptionValues["save"] = evSave;
 }
 
-static void processRequest(string request, Map objects, ostream& output);
+static void processRequest(string request, Map objects, stringstream& output);
 
 int main(int argc, char* argv[])
 {
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 
     // Creates the mapping object and populates it with data saved on the media.txt file
     Map objects("../media.txt");
-    
+
     Initialize();
 
     // creates the TCPServer
@@ -55,9 +55,11 @@ int main(int argc, char* argv[])
 
         // the request sent by the client to the server
         std::cout << "request: " << request << std::endl;
-        
+
         // processing the request sent by the client and running the appropriate command
-        output = {};
+        output.clear();
+        output.str(string());
+        
         processRequest(request, objects, output);
 
         // the response that the server sends back to the client
@@ -82,14 +84,14 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-void processRequest(string request, Map objects, ostream& output)
+void processRequest(string request, Map objects, stringstream& output)
 {
     string word;
     vector<string> opts{};
 
     if (request.empty()) opts = {""};
 
-    stringstream X (request);    
+    stringstream X (request);
     while ( getline(X, word, ' ') )
         opts.push_back(word);
 
@@ -112,7 +114,7 @@ void processRequest(string request, Map objects, ostream& output)
         output << "Medias:" << ";";
         for (auto it : objects.getAllMedias())
             output << "\t" << it.first << ";";
-        
+
         output << ";" << "Groups:" << ";";
         for (auto it : objects.getAllGroups())
             output << "\t" << it.first << ";";

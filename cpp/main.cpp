@@ -38,7 +38,7 @@ static void Initialize()
     s_mapOptionValues["q"] = evEnd;
 }
 
-static void processRequest(string request, Map objects, ostream& output);
+static void processRequest(string request, Map objects, stringstream& output);
 
 std::string ReplaceAll(std::string str, const std::string& from, const std::string& to) {
     size_t start_pos = 0;
@@ -51,7 +51,7 @@ std::string ReplaceAll(std::string str, const std::string& from, const std::stri
 
 
 int main(int argc, const char* argv[])
-{    
+{
     Map objects("../media.txt");
 
     string request;
@@ -59,30 +59,31 @@ int main(int argc, const char* argv[])
 
     Initialize();
     std::cout << endl << "Type 'help' to list all available commands." << endl;
-    
+
     while (1)
     {
-        output = {};
+        output.clear();
+        output.str(string());
         std::cout << "Choose a command: ";
         getline(cin, request);
         processRequest(request, objects, output);
 
         if (output.str() == "quit") break;
-        
+
         std::cout << ReplaceAll(output.str(), ";", "\n");
     }
 
     return 0;
 }
 
-void processRequest(string request, Map objects, ostream& output)
+void processRequest(string request, Map objects, stringstream& output)
 {
     string word;
     vector<string> opts{};
 
     if (request.empty()) opts = {""};
 
-    stringstream X (request);    
+    stringstream X (request);
     while ( getline(X, word, ' ') )
         opts.push_back(word);
 
@@ -105,7 +106,7 @@ void processRequest(string request, Map objects, ostream& output)
         output << "Medias:" << endl;
         for (auto it : objects.getAllMedias())
             output << it.first << endl;
-        
+
         output << endl << "Groups:" << endl;
         for (auto it : objects.getAllGroups())
             output << it.first << endl;
